@@ -1,0 +1,220 @@
+/* The side navigation menu */
+.sidenav {
+    height: 100%; /* 100% Full-height */
+    width: 0; /* 0 width - change this with JavaScript */
+    position: fixed; /* Stay in place */
+    z-index: 9999; /* Stay on top */
+    top: 0; /* Stay at the top */
+    right: 0;
+    background-color: #fff; /* Black*/
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 60px; /* Place content 60px from the top */
+    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+}
+
+/* The navigation menu links */
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+
+/* Position and style the close button (top right corner) */
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    width:100%;
+    // right: 25px;
+    // font-size: 36px;
+    // margin-left: 50px;
+}
+
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+#main {
+    transition: margin-left .5s;
+    padding: 20px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+}
+
+/* Custom */
+
+.sidenav{
+    .left{
+        text-align: left;
+    }
+
+    .right{
+        text-align: right;
+    }
+
+    .center{
+        text-align: center;
+    }
+
+    .btn-continue{
+        width: 50%;
+        float: left;
+        background: #555;
+        height: 60px;
+        color: #ebeaf1;
+        border-radius: 0;
+    }
+
+    .btn-checkout{
+        width: 50%;
+        background: #2e4db1;
+        height: 60px;
+        color: #ebeaf1;
+        border-radius: 0;
+    }
+
+    .btn-continue:hover{
+        background: rgb(128, 124, 124);
+        border-color: rgb(128, 124, 124);
+    }
+    
+    .btn-checkout:hover{
+        background: #6f83be;
+        border-color: #6f83be;
+    }
+}
+
+.shipping-total{
+    background: #fff;
+    div{
+        padding: 15px 40px 10px 40px;
+    }
+}
+
+.shipping-detail{
+    background: #ecebf1;
+    color: #999aa5;
+    padding: 10px 25px 10px 25px;
+
+    span.message{
+        font-size: 11px;
+        color: #cacbd1;
+    }
+
+    select.tax{
+        background: transparent;
+        color: #5e5ecc;
+        border: none;
+        box-shadow: none;
+    }
+}
+
+.shipping-detail.tax{
+    padding: 10px 0px 0px 20px;
+}
+
+.shipping-coupon{
+    background: #fff;
+    padding: 10px 10px 10px 10px;
+    border-bottom: 1px solid #e7e7e7;
+
+    input[type='text']{
+        width: 75%;
+    }
+
+    input[type='text']::-webkit-input-placeholder {
+        color: #cacbd1;
+        padding-left: 5px;
+    }
+
+    input[type='text']::-moz-placeholder {
+        color: #cacbd1;
+        padding-left: 5px;
+    }
+
+    input[type='text']:-ms-input-placeholder {
+        color: #cacbd1;
+        padding-left: 5px;
+    }
+
+    input[type='text']:-moz-placeholder {
+        color: #cacbd1;
+        padding-left: 5px;
+    }
+
+    button{
+        background: #555555;
+        border: 2px solid #555555;
+        color: #ebeaf1;
+    }
+}
+
+.shipping-products{
+    padding: 20px;
+
+    label,span,input{
+        color: #777;
+    }
+    
+    span,input{
+        font-size: 12px;
+    }
+
+    span.remove{
+        left: 130px;
+        position: relative;
+        cursor: pointer;
+    }
+
+    .qty{
+        border: 1px solid #d4cbd1;
+        width: 50%;
+        padding: 5px;
+        span{
+            margin-right: 5px;
+            color: #777;
+        }
+
+        input[type='number']{
+            width: 50%;
+            border:none;
+        }
+    }
+
+    .note a{
+        padding: 0;
+        text-decoration: none;
+        font-size: 12px;
+        color: #5d5ecc;
+        display: block;
+        transition: 0.3s;
+    }
+
+    textarea::-webkit-input-placeholder {
+        color: #cacbd1;
+        padding-left: 5px;
+    }
+
+    textarea::-moz-placeholder {
+        color: #cacbd1;
+        padding-left: 5px;
+    }
+
+    textarea:-ms-input-placeholder {
+        color: #cacbd1;
+        padding-left: 5px;
+    }
+
+    textarea:-moz-placeholder {
+        color: #cacbd1;
+        padding-left: 5px;
+    }
+}

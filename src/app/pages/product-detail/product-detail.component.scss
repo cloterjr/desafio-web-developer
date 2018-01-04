@@ -1,0 +1,32 @@
+.product-detail{
+    padding: 70px 70px 0px 0px;
+    text-align: center;
+    position: relative;
+
+    .img-principal{
+        width: 85%;
+        float: left;
+    }
+
+    .img-thumbnail{
+        width:10%;
+    }
+
+    .values{
+        button{
+            width: 100%;
+        }
+    }
+}
+
+.tab-detail-head{
+    padding-left: 20%;
+}
+
+.tab-detail-body{
+    border-top: 1px solid #dddddd;
+    #tab-1, #tab-2{
+        padding: 25px 10px 0px 10px;
+        text-align: center;
+    }
+}

@@ -1,0 +1,37 @@
+<div class="container-fluid">
+  <div class="row product-detail">
+    <div class="col-hiddex-xs col-md-2"></div>
+    <div class="col-xs-12 col-md-5">
+        <input type="hidden" [value]="product.images[0].src" #hiddenImgSrc>
+        <div class="img-principal"><img class="img img-responsive img-product" [src]="hiddenImgSrc.value"/></div>
+        <div class="img-thumbnail"><img *ngFor="let image of product.images" class="img img-responsive img-product"
+          [src]="image.src" (click)="hiddenImgSrc.value = image.src"/></div>
+    </div>
+    <div class="col-xs-12 col-md-3 values">
+        <h1>{{ product.name }}</h1>
+        <h4>{{ product.price | currency:'USD':true:'1.2-2'}}</h4>
+        <div><input class="form-control qty" type="number" #qty min="0"></div>
+        <br>
+        <div><button class="btn btn-primary" (click)="addToCart(product, qty.value)">ADD TO CART</button></div>
+    </div>
+    <div class="col-hiddex-xs col-md-2"></div>
+  </div>
+  <br>
+  <input type="hidden" #hdnTab [value]="0">
+  <ul class="nav nav-tabs tab-detail-head">
+      <li [class.active]="hdnTab.value==0"><a data-toggle="tab" href="javascript:void(0)" (click)="hdnTab.value=0">Description</a></li>
+      <li [class.active]="hdnTab.value==1"><a data-toggle="tab" href="javascript:void(0)" (click)="hdnTab.value=1">Details</a></li>
+    </ul>
+    <div class="row tab tab-detail-body">
+      <div class="col-xs-12">
+          <div class="tab-content">
+              <div id="tab-1" class="tab-pane fade in active" [class.in]="hdnTab.value==0" [class.active]="hdnTab.value==0">
+                  <h3>Product Description</h3>
+                  <p>{{ product.description }}</p>
+              </div>
+              <div id="tab-2" [innerHtml]="product.detail" class="tab-pane fade" [class.in]="hdnTab.value==1" [class.active]="hdnTab.value==1">
+              </div>
+            </div>
+      </div>
+    </div>
+</div>

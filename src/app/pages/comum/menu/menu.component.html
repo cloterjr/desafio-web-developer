@@ -1,0 +1,75 @@
+<nav class="navbar navbar-default nav-1">
+  <div class="container-fluid">
+
+    <div class="navbar-header logo">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">
+        <img *ngIf="site"  [src]="site.logo" class="img img-responsive">
+      </a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="bs-navbar-collapse-1">
+      <form class="navbar-form navbar-left navbar-search-form" role="form" action="" method="post" style="visibility: visible; animation-name: fadeInLeft;">
+        <div class="form-group">
+          <span class="search" (click)="search(searchTermInput.value,0)">
+            <i class="fa fa-search" aria-hidden="true"></i>
+          </span>
+          <input type="text" #searchTermInput [(ngModel)]="searchTerm" (keyup.enter)="search(searchTermInput.value,0)" name="searchTerm"
+            placeholder="Search..." class="search form-control">
+        </div>
+      </form>
+      <ul class="nav navbar-nav navbar-right">
+        <li class="login">
+          <a href="#">Sign in</a>
+        </li>
+        <li class="language">
+          <i class="fa fa-globe" aria-hidden="true"></i>
+        </li>
+        <li class="bag">
+          <i class="fa fa-shopping-bag" aria-hidden="true" (click)="openShoppingCart('open')"></i><span>{{ totalOrderItens }}</span>
+        </li>
+      </ul>
+    </div>
+    <!-- /.navbar-collapse -->
+
+
+
+    <div class="collapse navbar-collapse" id="bs-navbar-collapse-2">
+      <ul class="nav navbar-nav">
+        <li *ngFor="let categorie of categories" [class.active]="categorie.id==selectedCategorie">
+          <a href="javascript:void(0)" (click)="search('',categorie.id)" (click)="selectAz.value=1">{{ categorie.name }}</a>
+        </li>
+      </ul>
+    </div>
+    <!-- /.navbar-collapse -->
+
+    <div *ngIf="categorie" id="bs-navbar-collapse-3">
+        <img class="img img-responsive" [src]="categorie.img" alt="">
+      </div>
+
+    <div class="collapse navbar-collapse" id="bs-navbar-collapse-4">
+      <ul class="nav navbar-nav sort">
+        <li>
+          <span>SORT BY: </span>
+        </li>
+        <li>
+          <select (change)="reorder(selectAz.value)" #selectAz>
+            <option value="1">A-Z</option>
+            <option value="2">Z-A</option>
+          </select>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li class="viewing-count">VIEWING 1-4 OF 36</li>
+      </ul>
+    </div>
+    <!-- /.navbar-collapse -->
+  </div>
+  <!-- /.container-fluid -->
+</nav>
+<br style="clear:both">

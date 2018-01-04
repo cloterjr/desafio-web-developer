@@ -1,0 +1,61 @@
+<div id="mySidenav" class="sidenav">
+    <div class="closebtn">
+        <!-- <div class="shop-continue" (click)="closeShoppingCart()">< CONTINUE SHOPPING</div>
+        <div class="shop-checkout" (click)="closeShoppingCart()">CHECKOUT ></div> -->
+        <button class="btn btn-continue" (click)="closeShoppingCart()">< CONTINUE SHOPPING</button>
+        <button class="btn btn-primary btn-checkout" (click)="closeShoppingCart()">CHECKOUT ></button>
+    </div>
+    <div class="row shipping-total">
+        <div class="col-xs-6 left"><label>EST. ORDER TOTAL</label></div>
+        <div class="col-xs-6 right"><label>{{ totalOrder | currency:'USD':true:'1.2-2' }}</label></div>
+    </div>
+    <div class="row shipping-detail">
+        <div class="col-xs-6 left"><span>SUBTOTAL ({{ totalOrderItens }} ITEM)</span></div>
+        <div class="col-xs-6 right"><span>{{ totalOrder | currency:'USD':true:'1.2-2' }}</span></div>
+    </div>
+    <div class="row shipping-detail">
+            <div class="col-xs-6 left"><span>SHIPPING</span></div>
+            <div class="col-xs-6 right"><span>$0,00</span></div>
+    </div>
+    <div class="row shipping-detail">
+            <div class="col-xs-12"><span class="message">Additional Shipping Options Are Available in Checkout.</span></div>
+    </div>
+    <div class="row shipping-detail tax">
+            <div class="col-xs-6 left">
+                <select class="tax">
+                    <option value="0">ESTIMATE TAX</option>
+                </select>
+            </div>
+    </div>
+    <div class="row shipping-detail">
+            <div class="col-xs-6 left"><span>FEES</span></div>
+    </div>
+    <div class="row shipping-coupon">
+            <div class="col-xs-12 center">
+                <input type="text" placeholder="ADD COUPON CODE"><button>APPLY</button>
+            </div>
+    </div>
+    <br>
+    <div class="row shipping-products">
+        <div class="col-xs-12">
+            <div class="row" *ngFor="let product of cart" >
+                <div class="col-xs-6">
+                        <img class="img img-responsive" [src]="product.images[0].src"/>
+                    </div>
+                    <div class="col-xs-6">
+                        <span class="remove" (click)="removeProduct(product.id)">X</span>
+                        <div class="product-name"><label>{{ product.name }}</label></div>
+                        <div class="price"><span>Item Price: </span><label>{{ product.price | currency:'USD':true:'1.2-2'}}</label></div>
+                        <div class="qty"><span>Qty:</span><input type="number" min="0" [value]="product.totalItens"  (change)="updateTotalOrder(product.id, qtyItens.value)" #qtyItens></div>
+                        <div class="price"><span>Total Price: </span><label>{{ product.price * product.totalItens | currency:'USD':true:'1.2-2'}}</label></div>
+                        <div class="note">
+                            <a href="javascript:void(0)" (click)="addNoteClicked.value=1" *ngIf="addNoteClicked.value == 0">ADD NOTE</a>
+                            <textarea type="text" rows="3" cols="20" *ngIf="addNoteClicked.value == 1" #notes placeholder="Add your Note(s) here"></textarea>
+                            <a href="javascript:void(0)" (click)="addNoteClicked.value=0" (click)="notes.value=''" *ngIf="addNoteClicked.value == 1">REMOVE NOTE</a>
+                            <input type="hidden" #addNoteClicked [value]="0">
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

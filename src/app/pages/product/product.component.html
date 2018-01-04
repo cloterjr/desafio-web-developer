@@ -1,0 +1,18 @@
+<div class="container-fluid">
+<div class="row">
+  <div *ngIf="products.length > 0 && categorie" class="categorie-title"><h1>{{ categorie.name }}</h1></div>
+  <div class="col-xs-3 col-md-3 product-detail" *ngFor="let product of products">
+      <div><img class="img img-responsive img-product" [src]="product.images[0].src" (click)="viewProductDetail(product.id)"/></div>
+      <div><h4>{{product.name}}</h4></div>
+      <div><span>{{product.price | currency:'USD':true:'1.2-2'}}</span></div>
+  </div>
+</div>
+<br>
+<br>
+<br>
+<div class="row" *ngIf="products.length == 0" >
+  <div class="col-xs-12">
+    No result(s) found.
+  </div>
+</div>
+</div>
