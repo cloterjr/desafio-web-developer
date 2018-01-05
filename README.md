@@ -1,6 +1,29 @@
 # desafio-web-developer
 Projeto Teste de E-commerce
 
+## Instalação
+
+Clone o repositório:
+```
+git@github.com:cloterjr/desafio-web-developer.git
+```
+
+Instale as depêndencias:
+```
+npm install
+```
+
+## Execução
+
+Abra o terminal:
+```
+ng serve
+```
+ou
+```
+npm start
+```
+
 ## Objetivo do Projeto
 Este projeto foi construido com através de um desafio proposta para a construçao de um protótipo de E-commerce. Ele tem por objetivo simular alguns processos básicos de uma loja virtual como busca, visão de detalhe do produto e adição ao carrinho de compras.
 
