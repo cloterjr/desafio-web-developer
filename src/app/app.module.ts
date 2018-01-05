@@ -9,6 +9,8 @@ import { routing } from './app.routing.module';
 import { InMemoryWebApiModule  } from 'angular-in-memory-web-api';
 import { InMemoryCatalogoDbService } from './utils/InMemoryCatalogoDbService';
 
+import * as $ from 'jquery';
+
 import { AppComponent } from './app.component';
 
 import { SiteService } from './services/site.service';
