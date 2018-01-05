@@ -5,7 +5,7 @@ Projeto Teste de E-commerce
 
 Clone o repositório:
 ```
-git@github.com:marqueslu/desafio-web-developer.git
+git@github.com:cloterjr/desafio-web-developer.git
 ```
 
 Instale as depêndencias:
@@ -18,6 +18,10 @@ npm install
 Abra o terminal:
 ```
 ng serve
+```
+ou
+```
+npm start
 ```
 
 ## Objetivo do Projeto
